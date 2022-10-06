@@ -7,7 +7,7 @@ require (
 	github.com/Azure/azure-storage-blob-go v0.15.0
 	github.com/DataDog/datadog-go/v5 v5.1.1
 	github.com/airbrake/gobrake/v5 v5.6.0
-	github.com/aws/aws-sdk-go v1.44.111
+	github.com/aws/aws-sdk-go v1.44.112
 	github.com/benesch/cgosymbolizer v0.0.0-20190515212042-bec6fe6e597b
 	github.com/bugsnag/bugsnag-go/v2 v2.1.2
 	github.com/felixge/httpsnoop v1.0.3
@@ -39,7 +39,6 @@ require (
 	cloud.google.com/go/pubsub v1.25.1 // indirect
 	github.com/Azure/azure-pipeline-go v0.2.3 // indirect
 	github.com/DataDog/datadog-agent/pkg/obfuscate v0.39.0 // indirect
-	github.com/DataDog/datadog-go v4.8.3+incompatible // indirect
 	github.com/DataDog/sketches-go v1.4.1 // indirect
 	github.com/Microsoft/go-winio v0.6.0 // indirect
 	github.com/StackExchange/wmi v1.2.1 // indirect
@@ -65,9 +64,7 @@ require (
 	github.com/ianlancetaylor/cgosymbolizer v0.0.0-20220405231054-a1ae3e4bba26 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/jonboulle/clockwork v0.3.0 // indirect
-	github.com/josharian/intern v1.0.0 // indirect
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
-	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-ieproxy v0.0.9 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.2 // indirect
 	github.com/pborman/uuid v1.2.1 // indirect
@@ -81,7 +78,6 @@ require (
 	github.com/ryszard/goskiplist v0.0.0-20150312221310-2dfbae5fcf46 // indirect
 	github.com/shabbyrobe/gocovmerge v0.0.0-20190829150210-3e036491d500 // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
-	github.com/stretchr/objx v0.4.0 // indirect
 	github.com/tinylib/msgp v1.1.6 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
