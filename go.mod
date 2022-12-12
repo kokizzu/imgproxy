@@ -7,7 +7,7 @@ require (
 	github.com/Azure/azure-storage-blob-go v0.15.0
 	github.com/DataDog/datadog-go/v5 v5.1.1
 	github.com/airbrake/gobrake/v5 v5.6.0
-	github.com/aws/aws-sdk-go v1.44.139
+	github.com/aws/aws-sdk-go v1.44.152
 	github.com/benesch/cgosymbolizer v0.0.0-20190515212042-bec6fe6e597b
 	github.com/bugsnag/bugsnag-go/v2 v2.2.0
 	github.com/felixge/httpsnoop v1.0.3
@@ -24,21 +24,21 @@ require (
 	github.com/stretchr/testify v1.8.1
 	github.com/tdewolff/parse/v2 v2.6.4
 	github.com/trimmer-io/go-xmp v1.0.0
-	go.opentelemetry.io/contrib/detectors/aws/ec2 v1.11.1
+	go.opentelemetry.io/contrib/detectors/aws/ec2 v1.12.0
 	go.opentelemetry.io/contrib/detectors/aws/ecs v1.11.1
 	go.opentelemetry.io/contrib/detectors/aws/eks v1.11.1
 	go.opentelemetry.io/contrib/propagators/autoprop v0.36.4
 	go.opentelemetry.io/contrib/propagators/aws v1.11.1
-	go.opentelemetry.io/otel v1.11.1
+	go.opentelemetry.io/otel v1.11.2
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.33.0
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp v0.33.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.11.1
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.11.1
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.11.1
 	go.opentelemetry.io/otel/metric v0.33.0
-	go.opentelemetry.io/otel/sdk v1.11.1
+	go.opentelemetry.io/otel/sdk v1.11.2
 	go.opentelemetry.io/otel/sdk/metric v0.33.0
-	go.opentelemetry.io/otel/trace v1.11.1
+	go.opentelemetry.io/otel/trace v1.11.2
 	go.uber.org/automaxprocs v1.5.1
 	golang.org/x/image v0.1.0
 	golang.org/x/net v0.2.0
@@ -111,7 +111,6 @@ require (
 	github.com/ryszard/goskiplist v0.0.0-20150312221310-2dfbae5fcf46 // indirect
 	github.com/shabbyrobe/gocovmerge v0.0.0-20190829150210-3e036491d500 // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
-	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/tinylib/msgp v1.1.6 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/contrib/propagators/b3 v1.11.1 // indirect
