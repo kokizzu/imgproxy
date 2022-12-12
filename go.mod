@@ -43,17 +43,17 @@ require (
 	golang.org/x/image v0.1.0
 	golang.org/x/net v0.2.0
 	golang.org/x/sys v0.2.0
-	google.golang.org/api v0.103.0
-	google.golang.org/grpc v1.50.1
+	google.golang.org/api v0.104.0
+	google.golang.org/grpc v1.51.0
 	gopkg.in/DataDog/dd-trace-go.v1 v1.43.1
 )
 
 require (
 	cloud.google.com/go v0.107.0 // indirect
-	cloud.google.com/go/compute v1.12.1 // indirect
-	cloud.google.com/go/compute/metadata v0.2.1 // indirect
-	cloud.google.com/go/iam v0.7.0 // indirect
-	cloud.google.com/go/pubsub v1.26.0 // indirect
+	cloud.google.com/go/compute v1.13.0 // indirect
+	cloud.google.com/go/compute/metadata v0.2.2 // indirect
+	cloud.google.com/go/iam v0.8.0 // indirect
+	cloud.google.com/go/pubsub v1.27.1 // indirect
 	github.com/Azure/azure-pipeline-go v0.2.3 // indirect
 	github.com/DataDog/datadog-agent/pkg/obfuscate v0.40.1 // indirect
 	github.com/DataDog/sketches-go v1.4.1 // indirect
@@ -111,7 +111,6 @@ require (
 	github.com/ryszard/goskiplist v0.0.0-20150312221310-2dfbae5fcf46 // indirect
 	github.com/shabbyrobe/gocovmerge v0.0.0-20190829150210-3e036491d500 // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
-	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/tinylib/msgp v1.1.6 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/contrib/propagators/b3 v1.11.1 // indirect
@@ -128,12 +127,12 @@ require (
 	golang.org/x/oauth2 v0.2.0 // indirect
 	golang.org/x/sync v0.1.0 // indirect
 	golang.org/x/term v0.2.0 // indirect
-	golang.org/x/text v0.4.0 // indirect
+	golang.org/x/text v0.5.0 // indirect
 	golang.org/x/time v0.2.0 // indirect
 	golang.org/x/tools v0.3.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20221116193143-41c2ba794472 // indirect
+	google.golang.org/genproto v0.0.0-20221206210731-b1a01be3a5f6 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
