@@ -691,7 +691,7 @@ func applyPresetOption(po *ProcessingOptions, args []string, usedPresets ...stri
 
 			po.UsedPresets = append(po.UsedPresets, preset)
 
-			if err := applyURLOptions(po, p, append(usedPresets, preset)...); err != nil {
+			if err := applyURLOptions(po, p, true, append(usedPresets, preset)...); err != nil {
 				return err
 			}
 		} else {
@@ -966,6 +966,24 @@ func applyMaxAnimationFrameResolutionOption(po *ProcessingOptions, args []string
 	return nil
 }
 
+func applyMaxResultDimensionOption(po *ProcessingOptions, args []string) error {
+	if err := security.IsSecurityOptionsAllowed(); err != nil {
+		return err
+	}
+
+	if len(args) > 1 {
+		return newOptionArgumentError("Invalid max_result_dimension arguments: %v", args)
+	}
+
+	if x, err := strconv.Atoi(args[0]); err == nil {
+		po.SecurityOptions.MaxResultDimension = x
+	} else {
+		return newOptionArgumentError("Invalid max_result_dimension: %s", args[0])
+	}
+
+	return nil
+}
+
 func applyURLOption(po *ProcessingOptions, name string, args []string, usedPresets ...string) error {
 	switch name {
 	case "resize", "rs":
@@ -1056,13 +1074,21 @@ func applyURLOption(po *ProcessingOptions, name string, args []string, usedPrese
 		return applyMaxAnimationFramesOption(po, args)
 	case "max_animation_frame_resolution", "mafr":
 		return applyMaxAnimationFrameResolutionOption(po, args)
+	case "max_result_dimension", "mrd":
+		return applyMaxResultDimensionOption(po, args)
 	}
 
 	return newUnknownOptionError("processing", name)
 }
 
-func applyURLOptions(po *ProcessingOptions, options urlOptions, usedPresets ...string) error {
+func applyURLOptions(po *ProcessingOptions, options urlOptions, allowAll bool, usedPresets ...string) error {
+	allowAll = allowAll || len(config.AllowedProcessiongOptions) == 0
+
 	for _, opt := range options {
+		if !allowAll && !slices.Contains(config.AllowedProcessiongOptions, opt.Name) {
+			return newForbiddenOptionError("processing", opt.Name)
+		}
+
 		if err := applyURLOption(po, opt.Name, opt.Args, usedPresets...); err != nil {
 			return err
 		}
@@ -1134,7 +1160,7 @@ func parsePathOptions(parts []string, headers http.Header) (*ProcessingOptions, 
 
 	options, urlParts := parseURLOptions(parts)
 
-	if err = applyURLOptions(po, options); err != nil {
+	if err = applyURLOptions(po, options, false); err != nil {
 		return nil, "", err
 	}
 

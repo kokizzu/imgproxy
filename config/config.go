@@ -47,6 +47,8 @@ var (
 	MaxRedirects                int
 	PngUnlimited                bool
 	SvgUnlimited                bool
+	MaxResultDimension          int
+	AllowedProcessiongOptions   []string
 	AllowSecurityOptions        bool
 
 	JpegProgressive       bool
@@ -63,7 +65,6 @@ var (
 	AutoRotate            bool
 	EnforceThumbnail      bool
 	ReturnAttachment      bool
-	SvgFixUnsupported     bool
 
 	AutoWebp          bool
 	EnforceWebp       bool
@@ -252,6 +253,8 @@ func Reset() {
 	MaxRedirects = 10
 	PngUnlimited = false
 	SvgUnlimited = false
+	MaxResultDimension = 0
+	AllowedProcessiongOptions = make([]string, 0)
 	AllowSecurityOptions = false
 
 	JpegProgressive = false
@@ -272,7 +275,6 @@ func Reset() {
 	AutoRotate = true
 	EnforceThumbnail = false
 	ReturnAttachment = false
-	SvgFixUnsupported = false
 
 	AutoWebp = false
 	EnforceWebp = false
@@ -483,6 +485,9 @@ func Configure() error {
 	configurators.Bool(&PngUnlimited, "IMGPROXY_PNG_UNLIMITED")
 	configurators.Bool(&SvgUnlimited, "IMGPROXY_SVG_UNLIMITED")
 
+	configurators.Int(&MaxResultDimension, "IMGPROXY_MAX_RESULT_DIMENSION")
+	configurators.StringSlice(&AllowedProcessiongOptions, "IMGPROXY_ALLOWED_PROCESSING_OPTIONS")
+
 	configurators.Bool(&AllowSecurityOptions, "IMGPROXY_ALLOW_SECURITY_OPTIONS")
 
 	configurators.Bool(&JpegProgressive, "IMGPROXY_JPEG_PROGRESSIVE")
@@ -501,7 +506,6 @@ func Configure() error {
 	configurators.Bool(&AutoRotate, "IMGPROXY_AUTO_ROTATE")
 	configurators.Bool(&EnforceThumbnail, "IMGPROXY_ENFORCE_THUMBNAIL")
 	configurators.Bool(&ReturnAttachment, "IMGPROXY_RETURN_ATTACHMENT")
-	configurators.Bool(&SvgFixUnsupported, "IMGPROXY_SVG_FIX_UNSUPPORTED")
 
 	if _, ok := os.LookupEnv("IMGPROXY_ENABLE_WEBP_DETECTION"); ok {
 		log.Warning("IMGPROXY_ENABLE_WEBP_DETECTION is deprecated, use IMGPROXY_AUTO_WEBP instead")

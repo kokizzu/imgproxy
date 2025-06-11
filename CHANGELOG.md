@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 ### Added
+- Add [IMGPROXY_MAX_RESULT_DIMENSION](https://docs.imgproxy.net/latest/configuration/options#IMGPROXY_MAX_RESULT_DIMENSION) config and [max_result_dimension](https://docs.imgproxy.net/latest/usage/processing#max-result-dimension) processing option.
+- Add [IMGPROXY_ALLOWED_PROCESSING_OPTIONS](https://docs.imgproxy.net/latest/configuration/options#IMGPROXY_ALLOWED_PROCESSING_OPTIONS) config.
+- (pro) Add [IMGPROXY_ALLOWED_INFO_OPTIONS](https://docs.imgproxy.net/latest/configuration/options#IMGPROXY_ALLOWED_INFO_OPTIONS) config.
+- (pro) Add [IMGPROXY_MAX_CHAINED_PIPELINES](https://docs.imgproxy.net/latest/configuration/options#IMGPROXY_MAX_CHAINED_PIPELINES) config.
 - Add `imgproxy.source_image_origin` attribute to New Relic, DataDog, and OpenTelemetry traces.
 - Add `imgproxy.source_image_url` and `imgproxy.source_image_origin` attributes to `downloading_image` spans in New Relic, DataDog, and OpenTelemetry traces.
 - Add `imgproxy.processing_options` attribute to `processing_image` spans in New Relic, DataDog, and OpenTelemetry traces.
@@ -11,15 +15,20 @@
 - (pro) Add [IMGPROXY_PDF_NO_BACKGROUND](https://docs.imgproxy.net/latest/configuration/options#IMGPROXY_PDF_NO_BACKGROUND) config.
 
 ### Changed
+- Suppress "Response has no supported checksum" warnings from S3 SDK.
 - (docker) Optimized image quantization.
 - (pro) Improved BlurHash generation performance.
 
 ### Fixed
 - Fix `X-Origin-Content-Length` header value when SVG is sanitized or minified.
 - Mark JPEG XL format as supporting quality. Fixes autoquality for JPEG XL.
+- Fix the `extend` processing option when only one dimension is set.
 - (pro) Fix object detection when the `IMGPROXY_USE_LINEAR_COLORSPACE` config is set to `true`.
 - (pro) Fix BlurHash generation when the `IMGPROXY_USE_LINEAR_COLORSPACE` config is set to `true`.
 - (pro) Fix detection of PDF files with a header offset.
+
+### Removed
+- Remove the `IMGPROXY_SVG_FIX_UNSUPPORTED` config. The problem it was solving is now fixed in librsvg.
 
 ## [3.28.0] - 2025-03-31
 ### Added
